@@ -1,0 +1,23 @@
+{
+  // Cloudflare Workers — 정적 자산만 있는 Worker (서버 코드 없음).
+  //
+  // 대시보드에서 Git 연결로 만드셨다면 이 파일이 설정을 대신합니다.
+  // 저장소에 들어 있으니, 나중에 다른 사람이 받아도 같은 설정으로 배포됩니다.
+  //
+  // ※ name 은 대시보드에 실제로 만들어진 프로젝트 이름과 같아야 합니다.
+  //    다르면 배포가 엉뚱한 곳으로 가거나 실패합니다.
+  //    확인: 대시보드 > Compute > Workers & Pages > 프로젝트 > Settings
+  "name": "carbon-biz",
+  "compatibility_date": "2026-09-01",
+
+  // web\ 안의 파일을 그대로 서빙합니다.
+  // 헤더 설정(web\_headers)도 Workers 정적 자산에서 그대로 먹습니다.
+  "assets": {
+    "directory": "./web",
+    "not_found_handling": "404-page"
+  },
+
+  "observability": {
+    "enabled": true
+  }
+}

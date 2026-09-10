@@ -45,8 +45,13 @@ if ($SkipTest) {
   }
   if (Test-Path node_modules\playwright) {
     node tests\test_ui.js
-    if ($LASTEXITCODE -ne 0) {
+    # 종료 코드 2 = 브라우저를 못 찾아 아예 못 돌린 것. 검사 실패가 아니다.
+    # 이걸 실패로 보고 배포를 막으면, 브라우저 없는 PC 에서는 영영 못 올린다.
+    if ($LASTEXITCODE -eq 2) {
+      Note '브라우저가 없어 화면 검사를 건너뜁니다 (데이터 검사는 통과했습니다)'
+    } elseif ($LASTEXITCODE -ne 0) {
       Write-Host '화면 검사에서 실패했습니다. 올리지 않습니다.' -ForegroundColor Red
+      Write-Host '  그래도 올리시려면  .\deploy_web.ps1 -SkipTest' -ForegroundColor Yellow
       exit 1
     }
   } else { Note 'playwright 없음 — 화면 검사 건너뜁니다' }
@@ -79,9 +84,10 @@ git diff --cached --stat | Select-Object -Last 12
 
 Step '4/4' 'GitHub 로 올리기'
 if (-not $Message) {
-  $n = (Select-String -Path out\영업리스트.csv -Pattern '' -ErrorAction SilentlyContinue |
-        Measure-Object).Count
-  $Message = "갱신 $(Get-Date -Format 'yyyy-MM-dd HH:mm')" + $(if ($n) { " · $($n - 1)곳" } else { '' })
+  # 커밋 메시지는 날짜와 배포본 크기로 짓는다.
+  # (예전에 여기서 영업리스트.csv 줄 수를 세려고 Select-String -Pattern '' 를 썼는데,
+  #  빈 패턴은 PowerShell 이 거부한다. 20MB 파일을 훑는 것도 느려서 아예 뺐다.)
+  $Message = "갱신 $(Get-Date -Format 'yyyy-MM-dd HH:mm') · data $mb MB"
 }
 git commit -m $Message | Out-Null
 git push

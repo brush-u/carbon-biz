@@ -47,21 +47,21 @@
     --mono:"JetBrains Mono","IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
   }
   *{box-sizing:border-box}
-  body{background:var(--ground);color:var(--ink);font-family:var(--sans);font-size:15.5px;line-height:1.65;-webkit-font-smoothing:antialiased}
+  body{background:var(--ground);color:var(--ink);font-family:var(--sans);font-size:18px;line-height:1.65;-webkit-font-smoothing:antialiased}
   .app{max-width:1180px;margin:0 auto;padding:0 20px 72px}
 
   header{padding:26px 0 16px;border-bottom:2px solid var(--ink)}
-  .eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:12px}
-  h1{font-family:var(--sans);font-weight:800;font-size:clamp(28px,4.6vw,44px);line-height:1.2;margin:0 0 12px;letter-spacing:-.03em}
+  .eyebrow{font-family:var(--mono);font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:12px}
+  h1{font-family:var(--sans);font-weight:800;font-size:clamp(32px,4.8vw,50px);line-height:1.2;margin:0 0 12px;letter-spacing:-.03em}
   h1 em{font-style:normal;color:var(--verdigris)}
-  header p{margin:0;color:var(--ink-mid);font-size:15px;max-width:70ch}
+  header p{margin:0;color:var(--ink-mid);font-size:17px;max-width:70ch}
 
   .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin:22px 0 16px}
   .tile{background:var(--surface);padding:15px 17px;display:flex;flex-direction:column;gap:3px}
-  .tile .k{font-size:13px;color:var(--ink-mid);font-weight:500}
-  .tile .v{font-family:var(--mono);font-size:31px;font-weight:700;letter-spacing:-.035em;font-variant-numeric:tabular-nums;line-height:1.15}
-  .tile .v small{font-size:15px;font-weight:500;color:var(--ink-mid)}
-  .tile .u{font-size:11.5px;color:var(--ink-soft);font-family:var(--mono)}
+  .tile .k{font-size:15px;color:var(--ink-mid);font-weight:500}
+  .tile .v{font-family:var(--mono);font-size:35.5px;font-weight:700;letter-spacing:-.035em;font-variant-numeric:tabular-nums;line-height:1.15}
+  .tile .v small{font-size:17px;font-weight:500;color:var(--ink-mid)}
+  .tile .u{font-size:13px;color:var(--ink-soft);font-family:var(--mono)}
   /* 눈이 먼저 가야 할 숫자에만 색을 준다 — 다 칠하면 아무것도 강조되지 않는다 */
   .tile.hi{box-shadow:inset 3px 0 0 var(--verdigris)}
   .tile.hi .v{color:var(--verdigris-deep)}
@@ -73,18 +73,25 @@
     background:none;border:none;padding:0;text-align:left;cursor:pointer;line-height:inherit}
   .nmbtn:hover{text-decoration:underline}
   .nmbtn::after{content:"↗";font-size:.72em;margin-left:4px;opacity:.5;vertical-align:super}
-  .namemenu{position:absolute;z-index:900;min-width:196px;background:var(--surface);
+  .namemenu{position:absolute;z-index:1300;min-width:196px;background:var(--surface);
     border:1px solid var(--line);box-shadow:0 8px 26px rgba(0,0,0,.18);padding:5px}
-  .nmhead{padding:7px 9px 8px;font-size:13px;font-weight:600;color:var(--ink);
+  .nmhead{padding:7px 9px 8px;font-size:15px;font-weight:600;color:var(--ink);
     border-bottom:1px solid var(--line-soft);margin-bottom:4px;line-height:1.35}
-  .nmhead span{display:block;font-size:11.5px;font-weight:400;color:var(--ink-soft);margin-top:2px}
-  .namemenu a{display:block;padding:7px 9px;font-size:13.5px;color:var(--ink-mid);text-decoration:none}
+  .nmhead span{display:block;font-size:13px;font-weight:400;color:var(--ink-soft);margin-top:2px}
+  .namemenu a{display:block;padding:7px 9px;font-size:15.5px;color:var(--ink-mid);text-decoration:none}
   .namemenu a:hover{background:var(--verdigris-wash);color:var(--verdigris-deep)}
+  .namemenu .nmhere{display:block;width:100%;text-align:left;font-family:inherit;
+    padding:8px 9px;font-size:15.5px;font-weight:600;cursor:pointer;border:none;
+    background:var(--verdigris-wash);color:var(--verdigris-deep);
+    border-bottom:1px solid var(--line-soft)}
+  .namemenu .nmhere:hover{background:var(--verdigris);color:#fff}
+  .namemenu .nmno{display:block;padding:7px 9px;font-size:14px;color:var(--ink-soft);
+    border-bottom:1px solid var(--line-soft)}
   .mlink{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px;padding-top:8px;border-top:1px solid #e3e3e3}
-  .mlink a{font-size:11.5px;padding:2px 7px;border:1px solid #ccc;color:#1a5f56;text-decoration:none}
+  .mlink a{font-size:13px;padding:2px 7px;border:1px solid #ccc;color:#1a5f56;text-decoration:none}
   .mlink a:hover{background:#eef5f3}
 
-  .notice{display:flex;gap:10px;padding:14px 16px;font-size:14px;line-height:1.65;align-items:flex-start;margin-bottom:20px}
+  .notice{display:flex;gap:10px;padding:14px 16px;font-size:16px;line-height:1.65;align-items:flex-start;margin-bottom:20px}
   .notice.warn{background:var(--warn-wash);border-left:3px solid var(--warn)}
   .notice b{font-weight:600}
 
@@ -93,24 +100,50 @@
   .controls{display:grid;grid-template-columns:auto minmax(0,1fr);gap:9px 14px;align-items:center;
     padding:14px 16px;background:var(--surface);border:1px solid var(--line);
     margin-bottom:22px;position:sticky;top:0;z-index:600}
-  .cg-l{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.08em;color:var(--ink-soft);
+  .cg-l{font-family:var(--mono);font-size:12.5px;font-weight:600;letter-spacing:.08em;color:var(--ink-soft);
     text-align:right;white-space:nowrap;align-self:center;padding-top:1px}
-  .cg-l i{display:block;font-style:normal;font-size:9.5px;font-weight:400;letter-spacing:.02em;opacity:.75}
+  .cg-l i{display:block;font-style:normal;font-size:11px;font-weight:400;letter-spacing:.02em;opacity:.75}
   .cf{display:flex;align-items:center;gap:7px;flex-wrap:wrap;min-width:0}
+  /* .cf 의 display:flex 가 브라우저 기본 [hidden]{display:none} 을 이겨서,
+     숨긴 줄이 격자 칸을 계속 차지했다. 그러면 라벨과 입력이 한 칸씩 밀려
+     설명글이 라벨 칸으로 들어가며 라벨 칸이 1,100px 로 벌어진다. */
+  .controls [hidden]{display:none!important}
   .cf.spread{justify-content:space-between}
   .cf.spread>.q-wrap{display:flex;gap:7px;flex:1 1 260px;min-width:0}
-  @media (max-width:620px){
-    .controls{grid-template-columns:1fr;gap:4px 0;padding:12px 13px}
-    .cg-l{text-align:left;margin-top:7px}
+  @media (min-width:821px) and (max-height:780px){.controls{position:static}}
+
+  /* 좁은 화면 — 조건이 화면의 절반을 먹으면 지도도 목록도 못 본다.
+     그래서 오른쪽 서랍으로 접어 넣고, 오른쪽 아래 단추로 여닫는다. */
+  .cclose{display:none;position:absolute;right:12px;top:10px;background:none;border:none;
+    font-size:27.5px;line-height:1;color:var(--ink-soft);cursor:pointer}
+  .fabf{display:none;position:fixed;right:14px;bottom:14px;z-index:1150;
+    font-family:inherit;font-size:16px;font-weight:600;padding:12px 18px;cursor:pointer;
+    background:var(--verdigris);color:#fff;border:none;border-radius:999px;
+    box-shadow:0 6px 20px rgba(0,0,0,.22);align-items:center;gap:7px}
+  .fabf .fabn{font-family:var(--mono);font-size:13px;background:rgba(255,255,255,.26);
+    padding:1px 7px;border-radius:999px}
+  @media (max-width:820px){
+    .controls{position:fixed;top:0;right:0;height:100%;width:min(440px,94vw);z-index:1200;
+      grid-template-columns:1fr;gap:4px 0;margin:0;padding:52px 18px 44px;
+      overflow-y:auto;overscroll-behavior:contain;
+      border:none;border-left:3px solid var(--verdigris);
+      box-shadow:-20px 0 48px rgba(0,0,0,.16);
+      transform:translateX(101%);visibility:hidden;
+      transition:transform .28s cubic-bezier(.4,0,.2,1),visibility 0s .28s}
+    .controls.open{transform:translateX(0);visibility:visible;
+      transition:transform .28s cubic-bezier(.4,0,.2,1),visibility 0s}
+    .cg-l{text-align:left;margin-top:11px}
+    .cf.spread{flex-wrap:wrap}
+    .cclose{display:block}
+    .fabf{display:inline-flex}
   }
-  @media (max-height:780px){.controls{position:static}}
-  .chipbtn{font-family:inherit;font-size:13.5px;padding:6px 12px;cursor:pointer;background:var(--surface);border:1px solid var(--line);color:var(--ink-mid);display:inline-flex;align-items:center;gap:6px}
+  .chipbtn{font-family:inherit;font-size:15.5px;padding:6px 12px;cursor:pointer;background:var(--surface);border:1px solid var(--line);color:var(--ink-mid);display:inline-flex;align-items:center;gap:6px}
   .chipbtn:hover{border-color:var(--verdigris)}
   .chipbtn[aria-pressed="true"]{background:var(--verdigris);border-color:var(--verdigris);color:#fff;font-weight:600}
   :root[data-theme="dark"] .chipbtn[aria-pressed="true"]{color:#0B1211}
   @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .chipbtn[aria-pressed="true"]{color:#0B1211}}
   .chipbtn i{width:9px;height:9px;flex:none;border-radius:2px}
-  .chipbtn .ct{font-family:var(--mono);font-size:11.5px;font-weight:600;opacity:.8}
+  .chipbtn .ct{font-family:var(--mono);font-size:13px;font-weight:600;opacity:.8}
   /* required styles */
 
 .leaflet-pane,
@@ -774,66 +807,103 @@ svg.leaflet-image-layer.leaflet-interactive path {
 	}
 
   #lmap{height:620px;width:100%;background:var(--sunk)}
-  .leaflet-container{font-family:var(--sans);font-size:13px;background:var(--sunk)}
-  .leaflet-popup-content{margin:11px 13px;font-size:13.5px;line-height:1.6}
+  .leaflet-container{font-family:var(--sans);font-size:15px;background:var(--sunk)}
+  .leaflet-popup-content{margin:11px 13px;font-size:15.5px;line-height:1.6}
   .leaflet-popup-content b{font-weight:600}
-  .leaflet-popup-content .sub2{color:#666;font-size:11.5px}
-  .popdtl{margin-top:8px;font-family:inherit;font-size:12.5px;padding:4px 10px;cursor:pointer;
+  .leaflet-popup-content .sub2{color:#666;font-size:13px}
+  .popdtl{margin-top:8px;font-family:inherit;font-size:14.5px;padding:4px 10px;cursor:pointer;
     background:#1F6F63;color:#fff;border:none}
-  .leaflet-control-attribution{font-size:10px}
-  select{font-family:inherit;font-size:13.5px;padding:6px 9px;border:1px solid var(--line);background:var(--surface);color:var(--ink);
+  .leaflet-control-attribution{font-size:11.5px}
+  select{font-family:inherit;font-size:15.5px;padding:6px 9px;border:1px solid var(--line);background:var(--surface);color:var(--ink);
     flex:0 1 190px;min-width:150px;max-width:230px}
   .zoomctl{position:absolute;right:8px;top:8px;display:flex;flex-direction:column;gap:1px;z-index:5}
-  .zoomctl button{width:28px;height:28px;font-family:var(--mono);font-size:14px;line-height:1;
+  .zoomctl button{width:28px;height:28px;font-family:var(--mono);font-size:16px;line-height:1;
     background:var(--surface);border:1px solid var(--line);color:var(--ink);cursor:pointer}
   .zoomctl button:hover{border-color:var(--verdigris);color:var(--verdigris)}
-  .maphint{font-size:12px;color:var(--ink-soft);margin-top:7px;line-height:1.55}
-  /* 업체 상세 — 전화 걸기 직전에 보는 화면 */
-  .dtl{position:relative;background:var(--surface);border:1px solid var(--line);
-    border-left:3px solid var(--verdigris);padding:18px 20px;margin-bottom:14px}
-  .dclose{position:absolute;right:10px;top:8px;background:none;border:none;
-    font-size:22px;line-height:1;color:var(--ink-soft);cursor:pointer}
+  .maphint{font-size:14px;color:var(--ink-soft);margin-top:7px;line-height:1.55}
+  /* 업체 상세 — 전화 걸기 직전에 보는 화면.
+     목록 사이에 끼워 넣으면 표가 밀려 어디를 눌렀는지 놓친다.
+     그래서 오른쪽에서 밀려 나오는 서랍으로 띄우고, 목록은 그대로 둔다. */
+  .dtl{position:fixed;top:0;right:0;height:100%;width:min(480px,95vw);z-index:1200;
+    background:var(--surface);border-left:3px solid var(--verdigris);
+    box-shadow:-20px 0 48px rgba(0,0,0,.16);
+    padding:22px 24px 48px;overflow-y:auto;overscroll-behavior:contain;
+    transform:translateX(101%);visibility:hidden;
+    transition:transform .28s cubic-bezier(.4,0,.2,1),visibility 0s .28s}
+  .dtl.open{transform:translateX(0);visibility:visible;
+    transition:transform .28s cubic-bezier(.4,0,.2,1),visibility 0s}
+  .dscrim{position:fixed;inset:0;z-index:1199;background:rgba(11,18,17,.32);
+    opacity:0;visibility:hidden;pointer-events:none;
+    transition:opacity .28s,visibility 0s .28s}
+  .dscrim.open{opacity:1;visibility:visible;pointer-events:auto;
+    transition:opacity .28s,visibility 0s}
+  @media (prefers-reduced-motion:reduce){.dtl,.dscrim{transition:none}}
+  .dclose{position:absolute;right:14px;top:12px;background:none;border:none;
+    font-size:27.5px;line-height:1;color:var(--ink-soft);cursor:pointer}
   .dclose:hover{color:var(--ink)}
-  .dtitle{font-size:20px;font-weight:700;letter-spacing:-.02em;padding-right:28px}
-  .dsub{font-size:13px;color:var(--ink-soft);margin-top:3px}
-  .dscore{margin-top:12px;font-size:13px;color:var(--ink-mid)}
-  .dscore b{font-family:var(--mono);font-size:26px;font-weight:700;color:var(--verdigris-deep)}
+  .dtitle{font-size:23px;font-weight:700;letter-spacing:-.02em;padding-right:28px}
+  .dsub{font-size:15px;color:var(--ink-soft);margin-top:3px}
+  .dscore{margin-top:12px;font-size:15px;color:var(--ink-mid)}
+  .dscore b{font-family:var(--mono);font-size:30px;font-weight:700;color:var(--verdigris-deep)}
   .dscore span{margin-left:4px}
   .dwhy{display:flex;flex-wrap:wrap;gap:5px;margin-top:7px}
-  .wchip{font-size:11.5px;padding:2px 8px;background:var(--verdigris-wash);
+  .wchip{font-size:13px;padding:2px 8px;background:var(--verdigris-wash);
     color:var(--verdigris-deep);border:1px solid var(--verdigris)}
-  .dsect{margin:16px 0 6px;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;
+  .dsect{margin:16px 0 6px;font-family:var(--mono);font-size:12px;letter-spacing:.12em;
     color:var(--ink-soft);border-bottom:1px solid var(--line-soft);padding-bottom:5px}
-  .drow{display:flex;gap:14px;padding:5px 0;font-size:13.5px;line-height:1.55}
-  .drow>span{flex:0 0 88px;color:var(--ink-soft);font-size:12.5px;padding-top:2px}
+  .drow{display:flex;gap:14px;padding:5px 0;font-size:15.5px;line-height:1.55}
+  .drow>span{flex:0 0 88px;color:var(--ink-soft);font-size:14.5px;padding-top:2px}
   .drow>b{font-weight:500;color:var(--ink);min-width:0;word-break:break-word}
   .drow b.up{color:var(--s3)} .drow b.down{color:var(--crit)}
   .drow b.hi{color:var(--verdigris-deep);font-weight:700}
-  .dim{color:var(--ink-soft);font-size:12px;font-weight:400}
-  .dnote{margin-top:10px;font-size:12px;color:var(--ink-soft);line-height:1.6}
+  .dim{color:var(--ink-soft);font-size:14px;font-weight:400}
+  .dempty{margin:5px 0 2px;padding:9px 11px;font-size:13px;line-height:1.65;
+    color:var(--ink-soft);background:var(--sunk);border-left:2px solid var(--line)}
+  .dempty code{font-family:var(--mono);font-size:12px;background:var(--surface);
+    padding:1px 5px;border:1px solid var(--line);color:var(--ink-mid);
+    display:inline-block;margin-top:3px;word-break:break-all}
+  .dnote code{font-family:var(--mono);font-size:12px;background:var(--surface);
+    padding:1px 5px;border:1px solid var(--line);word-break:break-all}
+  .dnote{margin-top:10px;font-size:14px;color:var(--ink-soft);line-height:1.6}
   .dtl .mlink{margin:0;padding:0;border:none}
 
-  .sortbox{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;color:var(--ink-soft)}
+  /* 어느 정보가 몇 곳에 붙었는지 — 내려받기 전에 알아야 한다 */
+  .cover{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 4px}
+  .cvlab{font-size:14px;color:var(--ink-soft);margin-right:2px}
+  .cvlab b{color:var(--ink);font-weight:700;font-family:var(--mono)}
+  .cvi{font-size:14px;padding:3px 9px;border:1px solid var(--line);color:var(--ink-mid);
+    font-family:var(--mono);letter-spacing:.01em}
+  .cvi b{font-weight:700;color:var(--ink)}
+  .cvp{margin-left:5px;opacity:.6;font-size:12px}
+  .cvi.zero{color:var(--crit);border-color:var(--crit);opacity:.85}
+  .cvi.zero b{color:var(--crit)}
+  .dlnote{margin:8px 0 10px;padding:11px 14px;font-size:14.5px;line-height:1.6;
+    background:var(--warn-wash);border-left:3px solid var(--warn);color:var(--ink-mid)}
+  .dlnote b{color:var(--ink);font-weight:600}
+  .dlfix{margin:6px 0 0;padding-left:18px}
+  .dlfix li{margin:2px 0;font-family:var(--mono);font-size:13px}
+
+  .sortbox{display:inline-flex;align-items:center;gap:6px;font-size:14.5px;color:var(--ink-soft)}
   .sortbox select{flex:0 0 auto;min-width:140px}
   .chipbtn.dl{border-color:var(--verdigris);color:var(--verdigris-deep);font-weight:600}
 
-  .maplegend{display:flex;flex-wrap:wrap;gap:14px;margin:0 0 10px;font-size:12px;color:var(--ink-mid)}
+  .maplegend{display:flex;flex-wrap:wrap;gap:14px;margin:0 0 10px;font-size:14px;color:var(--ink-mid)}
   .maplegend span{display:inline-flex;align-items:center;gap:6px}
   .maplegend i{flex:none}
   .maplegend i.dot{width:8px;height:8px;border-radius:50%;background:var(--s1)}
   .maplegend i.area{width:15px;height:11px;background:var(--seq);opacity:.42;border:1px solid var(--seq)}
   .mapwarn{background:var(--warn-wash);border-left:3px solid var(--warn);
-    padding:10px 13px;margin-bottom:11px;font-size:12.5px;line-height:1.6;color:var(--ink)}
+    padding:10px 13px;margin-bottom:11px;font-size:14.5px;line-height:1.6;color:var(--ink)}
   .mapwarn b{font-weight:600}
-  input[type=search]{font-family:inherit;font-size:14.5px;padding:7px 11px;border:1px solid var(--line);background:var(--surface);color:var(--ink);
+  input[type=search]{font-family:inherit;font-size:16.5px;padding:7px 11px;border:1px solid var(--line);background:var(--surface);color:var(--ink);
     width:100%;min-width:0}
   input:focus-visible,button:focus-visible{outline:2px solid var(--verdigris);outline-offset:1px}
 
   .cols{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:18px;margin-bottom:22px}
   @media (max-width:880px){.cols{grid-template-columns:1fr}}
   .card{background:var(--surface);border:1px solid var(--line);padding:17px}
-  .card>h2{font-family:var(--sans);font-size:18.5px;font-weight:700;margin:0 0 5px;letter-spacing:-.02em}
-  .card>.sub{font-size:12.5px;color:var(--ink-soft);margin-bottom:14px}
+  .card>h2{font-family:var(--sans);font-size:21.5px;font-weight:700;margin:0 0 5px;letter-spacing:-.02em}
+  .card>.sub{font-size:14.5px;color:var(--ink-soft);margin-bottom:14px}
 
   /* isolate — Leaflet 내부 z-index(400~800)를 이 안에 가둔다.
      이게 없으면 스크롤할 때 지도가 상단 조회조건을 덮는다. */
@@ -841,16 +911,16 @@ svg.leaflet-image-layer.leaflet-interactive path {
   .card{position:relative;z-index:0}
   svg{display:block;width:100%;height:auto}
   svg text{font-family:var(--sans)}
-  .tip{position:absolute;pointer-events:none;background:var(--ink);color:var(--ground);font-size:11.5px;line-height:1.55;padding:8px 10px;white-space:nowrap;z-index:9;opacity:0;transition:opacity .1s}
+  .tip{position:absolute;pointer-events:none;background:var(--ink);color:var(--ground);font-size:13px;line-height:1.55;padding:8px 10px;white-space:nowrap;z-index:9;opacity:0;transition:opacity .1s}
   .tip b{font-family:var(--mono)}
 
   .ebox{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:12px;margin-bottom:16px}
   .ecard{background:var(--surface);border:1px solid var(--line);padding:14px 15px}
   .ecard.hi{border-left:3px solid var(--verdigris)}
-  .ek{font-size:13px;font-weight:600;color:var(--ink);margin-bottom:10px}
-  .erow{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:4px 0;font-size:13.5px;color:var(--ink-mid)}
-  .erow b{font-family:var(--mono);font-size:16px;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
-  .en{font-size:11.5px;color:var(--ink-soft);margin-top:10px;padding-top:8px;border-top:1px solid var(--line-soft);line-height:1.5}
+  .ek{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:10px}
+  .erow{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:4px 0;font-size:15.5px;color:var(--ink-mid)}
+  .erow b{font-family:var(--mono);font-size:18.5px;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
+  .en{font-size:13px;color:var(--ink-soft);margin-top:10px;padding-top:8px;border-top:1px solid var(--line-soft);line-height:1.5}
   /* 배출량 열은 지우지 않고 감춘다 — 지우면 thead/tbody 열 수가 어긋난다 */
   /* 열 순서: 1 회사명 2 업종 3 열공정 4 배출량 5 매출액 6 생산품 7 산업단지 8 주소
      감춘 열도 nth-child 로는 세어지므로 번호는 그대로 쓴다 */
@@ -865,69 +935,71 @@ svg.leaflet-image-layer.leaflet-interactive path {
   #ft .tc{white-space:nowrap;min-width:118px}
   #ft .sc{min-width:52px}
   .scv{display:inline-block;min-width:30px;padding:2px 7px;font-family:var(--mono);
-    font-size:12.5px;font-weight:700;background:var(--sunk);color:var(--ink-mid)}
+    font-size:14.5px;font-weight:700;background:var(--sunk);color:var(--ink-mid)}
   .scv.hot{background:var(--verdigris);color:#fff}
-  .tg{display:inline-block;font-family:var(--mono);font-size:10px;padding:1px 5px;margin-left:4px;
+  .tg{display:inline-block;font-family:var(--mono);font-size:11.5px;padding:1px 5px;margin-left:4px;
     border:1px solid var(--line);color:var(--ink-soft)}
-  .tg3{background:var(--verdigris-wash);border-color:var(--verdigris);color:var(--verdigris-deep)}
+  .tg3,.tg4{background:var(--verdigris-wash);border-color:var(--verdigris);color:var(--verdigris-deep)}
+  .tg4{font-weight:700}
   .tg1{background:var(--crit-wash);border-color:var(--crit);color:var(--crit)}
-  .exchip{display:inline-block;font-size:10.5px;padding:1px 6px;
+  .tg5{background:var(--crit);border-color:var(--crit);color:#fff;font-weight:700}
+  .exchip{display:inline-block;font-size:12px;padding:1px 6px;
     background:var(--warn-wash);border:1px solid var(--warn);color:var(--ink)}
   #ft .fc{white-space:nowrap;min-width:104px}
   #ft .fc .sub{white-space:normal}
   .etag.lst{background:var(--verdigris-wash);border-color:var(--verdigris);color:var(--verdigris-deep)}
   #ft .n{white-space:nowrap;min-width:120px}
   #ft .n .sub{white-space:normal}
-  .etag{display:inline-block;font-family:var(--mono);font-size:10.5px;letter-spacing:.04em;padding:1px 5px;border:1px solid var(--line);color:var(--ink-soft);white-space:nowrap}
+  .etag{display:inline-block;font-family:var(--mono);font-size:12px;letter-spacing:.04em;padding:1px 5px;border:1px solid var(--line);color:var(--ink-soft);white-space:nowrap}
   .etag.ets{background:var(--warn-wash);border-color:var(--warn);color:var(--ink)}
 
-  .hintline{font-size:12.5px;color:var(--ink-soft);line-height:1.6}
+  .hintline{font-size:14.5px;color:var(--ink-soft);line-height:1.6}
   .hintline b{color:var(--ink-mid);font-weight:600}
   .hintline a{color:var(--verdigris-deep)}
 
   .boot{padding:22px 18px;margin-bottom:20px;background:var(--surface);border:1px solid var(--line);
-    font-size:14.5px;color:var(--ink-mid);line-height:1.7}
+    font-size:16.5px;color:var(--ink-mid);line-height:1.7}
   .boot b{color:var(--crit)}
 
   .barlist{display:flex;flex-direction:column;gap:7px}
   .bar{display:grid;grid-template-columns:46px 1fr 64px;gap:9px;align-items:center;cursor:pointer;background:none;border:none;padding:2px 0;font-family:inherit;text-align:left}
   .bar:hover .bname{color:var(--verdigris)}
-  .bname{font-size:13.5px;color:var(--ink);font-weight:500}
+  .bname{font-size:15.5px;color:var(--ink);font-weight:500}
   .btrack{height:16px;background:var(--sunk);position:relative;overflow:hidden;display:flex}
   .btrack i{display:block;height:100%}
-  .bval{font-family:var(--mono);font-size:13px;font-weight:600;text-align:right;font-variant-numeric:tabular-nums;color:var(--ink)}
+  .bval{font-family:var(--mono);font-size:15px;font-weight:600;text-align:right;font-variant-numeric:tabular-nums;color:var(--ink)}
   .bar[aria-pressed="true"] .bname{color:var(--verdigris);font-weight:600}
 
   .legend{display:flex;flex-wrap:wrap;gap:12px;margin:0 0 12px}
-  .legend span{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;color:var(--ink-mid)}
+  .legend span{display:inline-flex;align-items:center;gap:6px;font-size:14.5px;color:var(--ink-mid)}
   .legend i{width:11px;height:11px;flex:none;border-radius:2px}
 
   .twrap{overflow:auto;border:1px solid var(--line);max-height:540px}
-  table{width:100%;border-collapse:collapse;font-size:14.5px;background:var(--surface)}
-  thead th{position:sticky;top:0;background:var(--sunk);font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.05em;color:var(--ink-mid);text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);white-space:nowrap;z-index:2}
+  table{width:100%;border-collapse:collapse;font-size:16.5px;background:var(--surface)}
+  thead th{position:sticky;top:0;background:var(--sunk);font-family:var(--mono);font-size:12.5px;font-weight:600;letter-spacing:.05em;color:var(--ink-mid);text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);white-space:nowrap;z-index:2}
   td{padding:10px 12px;border-bottom:1px solid var(--line-soft);vertical-align:top}
   tr:last-child td{border-bottom:none}
   td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
   td.n{font-family:var(--mono)}
-  td .sub{display:block;font-size:12px;color:var(--ink-soft);margin-top:3px}
+  td .sub{display:block;font-size:14px;color:var(--ink-soft);margin-top:3px}
   tbody tr:hover{background:var(--verdigris-wash)}
-  .kchip{display:inline-block;font-family:var(--mono);font-size:11px;font-weight:600;padding:3px 7px;color:#fff;white-space:nowrap}
+  .kchip{display:inline-block;font-family:var(--mono);font-size:12.5px;font-weight:600;padding:3px 7px;color:#fff;white-space:nowrap}
   :root[data-theme="dark"] .kchip{color:#0B1211}
   @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .kchip{color:#0B1211}}
 
   section{margin-bottom:22px}
-  section>h2{font-family:var(--sans);font-size:23px;font-weight:750;margin:0 0 5px;letter-spacing:-.03em}
-  section>.sub{font-size:13.5px;color:var(--ink-soft);margin-bottom:13px}
-  .rowcount{font-family:var(--mono);font-size:12.5px;color:var(--ink-soft);margin-top:9px}
+  section>h2{font-family:var(--sans);font-size:26.5px;font-weight:750;margin:0 0 5px;letter-spacing:-.03em}
+  section>.sub{font-size:15.5px;color:var(--ink-soft);margin-bottom:13px}
+  .rowcount{font-family:var(--mono);font-size:14.5px;color:var(--ink-soft);margin-top:9px}
 
   details{border:1px solid var(--line);background:var(--surface);padding:0}
-  summary{padding:14px 17px;cursor:pointer;font-weight:600;font-size:15px}
+  summary{padding:14px 17px;cursor:pointer;font-weight:600;font-size:17px}
   summary:hover{background:var(--sunk)}
-  .dbody{padding:0 17px 17px;font-size:14.5px;color:var(--ink-mid);line-height:1.75}
-  .dbody h3{font-size:14.5px;color:var(--ink);margin:17px 0 7px}
+  .dbody{padding:0 17px 17px;font-size:16.5px;color:var(--ink-mid);line-height:1.75}
+  .dbody h3{font-size:16.5px;color:var(--ink);margin:17px 0 7px}
   .dbody ul{margin:0;padding-left:19px;display:flex;flex-direction:column;gap:6px}
-  .dbody code{font-family:var(--mono);font-size:13px;background:var(--sunk);padding:1px 5px;color:var(--ink)}
-  footer{border-top:1px solid var(--line);padding-top:17px;margin-top:28px;font-size:13px;color:var(--ink-soft);line-height:1.65}
+  .dbody code{font-family:var(--mono);font-size:15px;background:var(--sunk);padding:1px 5px;color:var(--ink)}
+  footer{border-top:1px solid var(--line);padding-top:17px;margin-top:28px;font-size:15px;color:var(--ink-soft);line-height:1.65}
   @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 
@@ -943,7 +1015,8 @@ svg.leaflet-image-layer.leaflet-interactive path {
 
   <div class="boot" id="boot">전국 등록공장 데이터를 불러오는 중입니다… (약 6MB)</div>
 
-  <div class="controls">
+  <div class="controls" id="controls">
+    <button class="cclose" id="cclose" type="button" aria-label="조건 닫기">×</button>
     <span class="cg-l">분류</span>
     <div class="cf"><select id="secf"></select><select id="pmf"></select><select id="cxtf"></select></div>
 
@@ -1008,9 +1081,11 @@ svg.leaflet-image-layer.leaflet-interactive path {
 
   <section>
     <h2>업체 목록</h2>
-    <div class="sub">행을 누르면 상세가 열립니다 · 회사명을 누르면 지도 서비스로 바로 갑니다 · 화면에는 300건까지, 내려받기는 전체</div>
+    <div class="sub">행을 누르면 오른쪽에서 상세가 열립니다 (ESC 로 닫기) · 회사명을 누르면 지도 서비스로 바로 갑니다 · 화면에는 300건까지, 내려받기는 전체</div>
     <div class="sub" id="f-hint" style="margin-top:-8px"></div>
-    <div class="dtl" id="dtl" hidden></div>
+    <div class="cover" id="cover"></div>
+    <div class="dlnote" id="scorewarn" hidden></div>
+    <div class="dlnote" id="dlnote" hidden></div>
     <div class="twrap"><table id="ft"><thead><tr>
       <th>회사명</th><th>업종</th><th>열공정</th><th class="n sc">우선<br><small>순위</small></th><th class="n pc" id="th-p">종업원<br><small>국민연금</small></th><th class="tc" id="th-t">연락처</th><th class="n ec" id="th-e">배출량<br><small>tCO₂eq</small></th><th class="n fc" id="th-f">매출액<br><small>DART</small></th><th>생산품</th><th>산업단지</th>
     </tr></thead><tbody></tbody></table></div>
@@ -1018,8 +1093,11 @@ svg.leaflet-image-layer.leaflet-interactive path {
   </section>
 
   <section>
-    <h2>배출량으로 본 자리</h2>
-    <div class="sub">공개된 배출량은 규제 대상 법인만 있습니다. 그 바깥이 이 사업의 대상입니다</div>
+    <h2>왜 「규제 밖」이 영업 대상인가</h2>
+    <div class="sub">배출량을 나라에 보고해야 하는 문턱은 아래와 같습니다.
+      이 문턱을 넘는 곳은 이미 담당자도, 컨설팅 업체도 있습니다.
+      <b>문턱 아래에 있는데 CBAM 품목을 만드는 곳</b>이 아무 준비 없이 규제를 맞는 자리이고,
+      그래서 우선순위 점수에서 「규제 밖」에 20점을 줍니다.</div>
     <div class="ebox">
       <div class="ecard">
         <div class="ek">배출권거래제 (ETS)</div>
@@ -1133,6 +1211,11 @@ svg.leaflet-image-layer.leaflet-interactive path {
   </footer>
 </div>
 
+<div class="dscrim" id="dscrim"></div>
+<aside class="dtl" id="dtl" role="dialog" aria-modal="true" aria-label="업체 상세"></aside>
+<div class="dscrim" id="fscrim"></div>
+<button class="fabf" id="fabf" type="button">조건<span class="fabn" id="fabn">전체</span></button>
+
 <script>/* @preserve
  * Leaflet 1.9.4, a JS library for interactive maps. https://leafletjs.com
  * (c) 2010-2023 Vladimir Agafonkin, (c) 2010-2011 CloudMade
@@ -1181,7 +1264,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
   var PN = (D.meta.pension && D.meta.pension.have) ? D.meta.pension : null;
   var CT = (D.meta.contact && D.meta.contact.have) ? D.meta.contact : null;
   var EX = (D.meta.export  && D.meta.export.have)  ? D.meta.export  : null;
-  var TG = ['없음', '낮음', '보통', '확실'];
+  var TG = ['없음', '낮음', '보통', '확실', '두 곳 확인', '주소 불일치'];
   // 시도 경계 — OSM 타일에는 경계가 '그려져' 있을 뿐 클릭할 정보가 없다.
   // 구역을 눌러 그 지역만 보려면 좌표 폴리곤이 따로 있어야 한다.
   var B  = JSON.parse(document.getElementById('bnd').textContent);
@@ -1240,13 +1323,15 @@ svg.leaflet-image-layer.leaflet-interactive path {
   // 공장은 상호로 등록돼 있지 않은 곳이 많아 회사명만으로는 못 찾는 일이 흔하다.
   // 그래서 이름 검색과 주소 검색 두 갈래를 다 만들어 둔다.
   function mapLinks(f){
+    // 상호만 넘기면 전국의 동명 업체가 걸린다. 주소를 함께 넘겨야 그 공장이 나온다.
+    var addr = f.a || ((f.s || '') + ' ' + (f.g || ''));
+    var both = encodeURIComponent((f.n + ' ' + addr).trim());
     var byName = encodeURIComponent(f.n + ' ' + (f.g || f.s || ''));
-    var byAddr = encodeURIComponent(f.a || (f.s + ' ' + f.g));
+    var byAddr = encodeURIComponent(addr);
     return [
       ['네이버 지도',  'https://map.naver.com/p/search/' + byName],
       ['카카오맵',    'https://map.kakao.com/?q=' + byName],
-      ['구글 지도',   'https://www.google.com/maps/search/?api=1&query=' +
-                      (f.y ? encodeURIComponent(f.y + ',' + f.x) : byName)],
+      ['구글 지도',   'https://www.google.com/maps/search/?api=1&query=' + both],
       ['주소로 찾기', 'https://map.naver.com/p/search/' + byAddr]
     ];
   }
@@ -1256,7 +1341,32 @@ svg.leaflet-image-layer.leaflet-interactive path {
     }).join('') + '</span>';
   }
 
-  // 표에서는 이름 자체가 버튼이고, 누르면 네 갈래가 뜬다
+  // ---- 이 페이지 지도로 이동 ----
+  // 바깥 지도 서비스로 나가기 전에, 우선 이 화면 지도에서 어디쯤인지 보여준다.
+  // 좌표가 있는 곳만 된다 (지오코딩이 아직 전체가 아니다).
+  var FOCUS = null, DF = null;
+  function focusOnMap(f){
+    if(!f.y) return false;
+    closeMenu(); closeDrawer(); closeFilters();
+    var w = $('mapwrap');
+    if(w) w.scrollIntoView({block:'center', behavior:'smooth'});
+    window.__focused = f.n;              // 화면 검사에서 확인하는 표식
+    if(!LMAP){                           // 타일이 막혀 SVG 로 그린 경우
+      var h = $('maphint');
+      if(h) h.innerHTML = '<b>' + esc(f.n) + '</b> — ' + esc(f.a)
+                        + ' · 배경지도를 못 불러와 위치를 확대할 수 없습니다.';
+      return true;
+    }
+    LMAP.setView([f.y, f.x], 16, {animate:true});
+    if(FOCUS){ LMAP.removeLayer(FOCUS); FOCUS = null; }
+    FOCUS = L.circleMarker([f.y, f.x], {radius:14, weight:3, color:'#C1440E', fill:false})
+             .addTo(LMAP)
+             .bindPopup('<b>' + esc(f.n) + '</b><br><span class="sub2">' + esc(f.a) + '</span>');
+    setTimeout(function(){ if(FOCUS) FOCUS.openPopup(); }, 400);
+    return true;
+  }
+
+  // 표에서는 이름 자체가 버튼이고, 누르면 갈래가 뜬다
   var MENU = null, MENUAT = 0;
   function closeMenu(){ if(MENU){ MENU.remove(); MENU = null; } }
   document.addEventListener('click', function(ev){
@@ -1273,10 +1383,14 @@ svg.leaflet-image-layer.leaflet-interactive path {
     m.innerHTML = '<div class="nmhead">' + esc(f.n) +
       '<span>' + esc(f.s + ' ' + f.g + (f.c ? ' · ' + f.c : '')) +
       (f.fs ? ' · 매출 ' + won(f.fs) : '') + '</span></div>'
+      + (f.y ? '<button type="button" class="nmhere">이 지도에서 보기</button>'
+             : '<span class="nmno">이 화면 지도에는 아직 좌표가 없습니다</span>')
       + mapLinks(f).map(function(o){
           return '<a href="' + attr(o[1]) + '" target="_blank" rel="noopener">' + o[0] + '</a>';
         }).join('');
     document.body.appendChild(m);
+    var here = m.querySelector('.nmhere');
+    if(here) here.onclick = function(ev){ ev.stopPropagation(); focusOnMap(f); };
     var r = btn.getBoundingClientRect();
     m.style.left = Math.min(r.left + window.scrollX,
                             window.scrollX + window.innerWidth - 215) + 'px';
@@ -1935,10 +2049,14 @@ svg.leaflet-image-layer.leaflet-interactive path {
       + (EM.year ? ' · 배출량 ' + EM.year + '년 명세서' : '');
     var h=$('e-hint');
     if(h) h.querySelector('span').innerHTML =
-      '<b>붙인 파일</b> — ' + esc(EM.src && EM.src.ets || '없음') + ' / '
-      + esc(EM.src && EM.src.emit || '없음')
-      + '. 법인명 대조로 붙였고 사업자등록번호가 없어 완전하지 않습니다. '
-      + '맞은 쌍은 <code>배출량_매칭결과.csv</code>에서 확인하십시오.';
+      (EM.src && (EM.src.ets || EM.src.emit)
+        ? '이 배출량은 <b>' + esc(EM.src.ets || '—') + '</b> 와 <b>'
+          + esc(EM.src.emit || '—') + '</b> 두 파일에서 가져왔습니다. '
+        : '배출량 원본 파일 이름이 기록돼 있지 않습니다 (예전 방식으로 만든 캐시). '
+          + '<code>python src\\03_emission.py</code> 를 다시 돌리면 기록됩니다. ')
+      + '원본에 사업자등록번호가 없어 <b>법인 이름을 맞춰 붙였습니다</b>. '
+      + '이름이 비슷한 다른 법인에 잘못 붙었을 수 있으니, '
+      + '무엇이 무엇에 붙었는지는 <code>out\\배출량_매칭결과.csv</code> 를 열어 확인하십시오.';
   }
 
   // ---- 업체 상세 ----
@@ -1948,11 +2066,18 @@ svg.leaflet-image-layer.leaflet-interactive path {
       return v ? '<div class="drow"><span>'+k+'</span><b'+(cls?' class="'+cls+'"':'')
                  +'>'+v+'</b></div>' : '';
     }
+    // 구획에 붙은 값이 하나도 없으면 제목만 덩그러니 남아 "비었다"로 보인다.
+    // 그럴 때는 왜 비었는지와 무엇을 돌려야 채워지는지를 대신 적는다.
+    function sect(title, rows, why){
+      var body = rows.join('');
+      return '<div class="dsect">' + title + '</div>'
+           + (body || '<div class="dempty">' + why + '</div>');
+    }
     var why = [];
     (D.meta.score || []).forEach(function(o){
       var ok = (o.k==='cbam' && f.cb) || (o.k==='heat' && f.h!=='해당없음')
             || (o.k==='unreg' && !f.r) || (o.k==='size' && f.emp>=20 && f.emp<=300)
-            || (o.k==='export' && f.ex) || (o.k==='tel' && f.tg===3)
+            || (o.k==='export' && f.ex) || (o.k==='tel' && (f.tg===3 || f.tg===4))
             || (o.k==='grow' && f.hin > f.hout);
       if(ok) why.push('<span class="wchip">'+esc(o.label)+' +'+o.pt+'</span>');
     });
@@ -1962,53 +2087,221 @@ svg.leaflet-image-layer.leaflet-interactive path {
       ? (f.hin - f.hout > 0 ? '▲ +' : (f.hin - f.hout < 0 ? '▼ ' : '– '))
         + (f.hin - f.hout) + '명 (신규 ' + f.hin + ' / 상실 ' + f.hout + ')'
       : '';
+
+    var telWarn = f.tg === 5
+      ? '<div class="dempty"><b>이 번호는 쓰지 마십시오.</b> 카카오와 네이버가 서로 '
+        + '다른 장소를 가리킵니다 — 둘 중 하나는 같은 이름의 다른 업체입니다. '
+        + '<code>out\\연락처_수집결과.csv</code> 에서 두 주소를 비교하십시오.</div>'
+      : (f.tg === 2 || f.tg === 1
+          ? '<div class="dempty">이 번호는 상호만 맞은 것입니다. 걸기 전에 위 지도 '
+            + '서비스에서 주소가 같은지 한 번 보십시오.</div>'
+          : '');
+    var telWhy = CT
+      ? '이 업체는 카카오 장소 검색에서 못 찾았습니다. 아래 지도 서비스로 직접 찾아보십시오.'
+      : '아직 연락처를 모읍니다 — <code>python src\\06_contact.py --key 카카오REST키 --scope target</code>';
+    var sizeWhy = (PN || FI)
+      ? '이 업체는 국민연금·DART 어느 쪽에도 이름이 맞는 곳이 없었습니다. '
+        + '3인 미만이거나 상호가 다르게 등록됐을 수 있습니다.'
+      : '아직 규모 정보를 안 붙였습니다 — <code>python src\\04_pension.py</code> (종업원·인건비), '
+        + '<code>python src\\05_finance.py --key DART키</code> (매출)';
+
+    DF = f;
     $('dtl').innerHTML =
       '<button class="dclose" type="button" aria-label="닫기">×</button>'
-      + '<div class="dtitle">' + esc(f.n) + '</div>'
+      + '<div class="dtitle"><button type="button" class="nmbtn dnamebtn">'
+      + esc(f.n) + '</button></div>'
       + '<div class="dsub">' + esc(f.se) + (f.pm ? ' · ' + esc(f.pm) : '')
       + ' · ' + esc(f.s) + ' ' + esc(f.g) + '</div>'
       + (f.sc ? '<div class="dscore"><b>' + f.sc + '</b>점 <span>영업 우선순위</span></div>'
                 + '<div class="dwhy">' + why.join('') + '</div>' : '')
-      + '<div class="dsect">연락</div>'
-      + row('전화', tel)
-      + row('지도', linkRow(f))
-      + row('주소', esc(f.a))
-      + row('산업단지', f.c ? esc(f.c) + ' <span class="dim">' + esc(f.ct) + '</span>' : '개별입지')
-      + '<div class="dsect">규모</div>'
-      + row('종업원', f.emp ? n0(f.emp) + '명 <span class="dim">국민연금 가입자</span>' : '')
-      + row('인건비', f.amt ? won(f.amt * 12 / 0.09) + ' <span class="dim">고지액에서 추정한 연 급여총액</span>' : '')
-      + row('고용 추이', trend, (f.hin - f.hout) > 0 ? 'up' : ((f.hin - f.hout) < 0 ? 'down' : ''))
-      + row('매출', f.fs ? won(f.fs) + ' <span class="dim">' + esc(f.fn) + ' ' + (FI ? FI.year : '') + '</span>' : '')
-      + '<div class="dsect">탄소</div>'
-      + row('생산품', esc(f.p))
-      + row('CBAM 품목', f.cb ? '<span class="kchip" style="background:'+CBCOLOR[f.cb]+'">'+esc(f.cb)+'</span>' : '')
-      + row('열공정', f.h !== '해당없음' ? esc(f.h) : '')
-      + row('규제', f.r ? (f.r === 1 ? '배출권거래제 할당대상' : '명세서 제출 법인')
-                        : '<b class="hi">규제 밖</b> <span class="dim">배출량을 세어본 적이 없는 곳</span>')
-      + row('배출량', f.e ? n0(f.e) + ' tCO₂eq <span class="dim">' + esc(f.ln) + ' 법인 전체</span>' : '')
-      + row('수출 명단', f.ex ? esc(f.ex) : '')
-      + (f.ex ? '' : '<div class="dnote">수출 명단에 없습니다 — 수출을 안 한다는 뜻은 아닙니다. '
-                     + '개별 기업 수출실적은 공개되지 않습니다.</div>');
-    $('dtl').hidden = false;
-    $('dtl').querySelector('.dclose').onclick = function(){ $('dtl').hidden = true; };
-    $('dtl').scrollIntoView({block:'nearest', behavior:'smooth'});
+      + sect('연락', [
+          row('전화', tel),
+          row('지도', linkRow(f)),
+          row('주소', esc(f.a)),
+          row('산업단지', f.c ? esc(f.c) + ' <span class="dim">' + esc(f.ct) + '</span>' : '개별입지')
+        ], telWhy)
+      + telWarn
+      + sect('규모', [
+          row('종업원', f.emp ? n0(f.emp) + '명 <span class="dim">국민연금 가입자</span>' : ''),
+          row('인건비', f.amt ? won(f.amt * 12 / 0.09) + ' <span class="dim">고지액에서 추정한 연 급여총액</span>' : ''),
+          row('고용 추이', trend, (f.hin - f.hout) > 0 ? 'up' : ((f.hin - f.hout) < 0 ? 'down' : '')),
+          row('매출', f.fs ? won(f.fs) + ' <span class="dim">' + esc(f.fn) + ' ' + (FI ? FI.year : '') + '</span>' : '')
+        ], sizeWhy)
+      + sect('탄소', [
+          row('생산품', esc(f.p)),
+          row('CBAM 품목', f.cb ? '<span class="kchip" style="background:'+CBCOLOR[f.cb]+'">'+esc(f.cb)+'</span>' : ''),
+          row('열공정', f.h !== '해당없음' ? esc(f.h) : ''),
+          row('규제', f.r ? (f.r === 1 ? '배출권거래제 할당대상' : '명세서 제출 법인')
+                          : '<b class="hi">규제 밖</b> <span class="dim">배출량을 세어본 적이 없는 곳</span>'),
+          row('배출량', f.e ? n0(f.e) + ' tCO₂eq <span class="dim">' + esc(f.ln) + ' 법인 전체</span>' : ''),
+          row('수출 명단', f.ex ? esc(f.ex) : '')
+        ], '생산품 정보가 없어 탄소 관련 판정을 못 했습니다.')
+      + (f.ex ? ''
+              : '<div class="dnote">' + (EX
+                  ? '수출 명단에 없습니다 — 수출을 안 한다는 뜻은 아닙니다. 개별 기업 수출실적은 공개되지 않습니다.'
+                  : '수출 명단을 아직 안 붙였습니다 — 명단 파일을 <code>data\\export\\</code> 에 넣고 '
+                    + '<code>python src\\07_export.py</code>') + '</div>');
+    openDrawer();
   }
 
+  // ---- 오른쪽 서랍 여닫기 (상세 · 조건) ----
+  function openDrawer(){
+    closeFilters();
+    $('dtl').classList.add('open');
+    $('dscrim').classList.add('open');
+    var b = $('dtl').querySelector('.dclose');
+    if(b){ b.onclick = closeDrawer; b.focus(); }
+    var t = $('dtl').querySelector('.dnamebtn');
+    if(t) t.onclick = function(ev){ ev.stopPropagation(); openMenu(t, DF); };
+    $('dtl').scrollTop = 0;
+  }
+  function closeDrawer(){
+    $('dtl').classList.remove('open');
+    $('dscrim').classList.remove('open');
+  }
+  function openFilters(){
+    closeDrawer();
+    $('controls').classList.add('open');
+    $('fscrim').classList.add('open');
+  }
+  function closeFilters(){
+    $('controls').classList.remove('open');
+    $('fscrim').classList.remove('open');
+  }
+  $('dscrim').onclick = closeDrawer;
+  $('fscrim').onclick = closeFilters;
+  $('cclose').onclick = closeFilters;
+  $('fabf').onclick = function(){
+    if($('controls').classList.contains('open')) closeFilters(); else openFilters();
+  };
+  document.addEventListener('keydown', function(e){
+    if(e.key !== 'Escape') return;
+    if($('dtl').classList.contains('open')) closeDrawer();
+    else if($('controls').classList.contains('open')) closeFilters();
+  });
+
   // ---- 현재 목록 내려받기 ----
+  // 지금 조건에서 어느 정보가 몇 곳에 붙어 있는지를 표 위에 늘 띄운다.
+  // 0곳이면 붙이는 단계를 안 돌린 것이지 연결이 깨진 것이 아니다 — 그 말을 화면이 해야 한다.
+  // 지금 조건에서 어느 정보가 몇 곳에 붙어 있는지를 표 위에 늘 띄운다.
+  // 이 숫자는 업체마다 붙는 값이고, 여기 적히는 것은 "그 값을 가진 곳이 몇 곳인가"다.
+  // 0곳이면 붙이는 단계를 안 돌린 것이지 연결이 깨진 것이 아니다 — 그 말을 화면이 해야 한다.
+  function coverStrip(rows){
+    var c = {e:0, emp:0, fs:0, tel:0, ex:0};
+    rows.forEach(function(f){
+      if(f.e) c.e++; if(f.emp) c.emp++; if(f.fs) c.fs++;
+      if(f.tel) c.tel++; if(f.ex) c.ex++;
+    });
+    var N = rows.length;
+    var pc = function(v){ return N ? (v / N * 100).toFixed(v / N >= 0.1 ? 0 : 1) + '%' : '0%'; };
+    var items = [['배출량', c.e], ['종업원', c.emp], ['매출', c.fs],
+                 ['전화', c.tel], ['수출명단', c.ex]];
+    $('cover').innerHTML =
+      '<span class="cvlab">지금 조건에 걸린 <b>' + n0(N) + '</b>곳 가운데, 값이 붙어 있는 업체 수</span>'
+      + items.map(function(o){
+          return '<span class="cvi' + (o[1] ? '' : ' zero') + '" title="'
+               + attr(o[0] + ' 값이 있는 업체 ' + n0(o[1]) + '곳 / ' + n0(N) + '곳')
+               + '">' + o[0] + ' <b>' + n0(o[1]) + '</b>'
+               + (o[1] ? '<span class="cvp">' + pc(o[1]) + '</span>' : '') + '</span>';
+        }).join('');
+    scoreWarn(rows);
+  }
+
+  // 우선순위가 전부 같은 값으로 나오는 일이 있다. 붙인 자료가 없어서
+  // 7개 기준 중 몇 개가 아예 켜지지 않기 때문이다. 그 사정을 그대로 적는다.
+  function scoreWarn(rows){
+    var w = $('scorewarn');
+    var live = { cbam:true, heat:true, unreg:true,
+                 size:!!PN, grow:!!PN, tel:!!CT, export:!!EX };
+    var off = (D.meta.score || []).filter(function(o){ return !live[o.k]; });
+    var seen = {}, nd = 0;
+    for(var i = 0; i < rows.length; i++){
+      var v = rows[i].sc || 0;
+      if(!seen[v]){ seen[v] = 1; nd++; }
+    }
+    if(!off.length && nd > 3){ w.hidden = true; return; }
+    w.hidden = false;
+    w.innerHTML =
+      '<b>우선순위 점수가 몇 종류로 뭉쳐 있습니다.</b> 지금 조건에서 나오는 점수는 '
+      + nd + '가지뿐입니다. 7개 기준 가운데 <b>' + (7 - off.length) + '개</b>만 켜져 있기 때문입니다.'
+      + (off.length
+          ? '<ul class="dlfix">' + off.map(function(o){
+              return '<li>' + esc(o.label) + ' (+' + o.pt + ') — 자료가 없어 모든 업체가 0점</li>';
+            }).join('') + '</ul>'
+            + '종업원·연락처·수출명단을 붙이면 같은 75점 안에서도 순위가 갈립니다.'
+          : '');
+  }
+
+  function showDlNote(nRows, nKeep, gone){
+    var note = $('dlnote');
+    note.hidden = false;
+    if(!gone.length){
+      note.innerHTML = '내려받았습니다 — ' + n0(nRows) + '곳 · 열 ' + nKeep + '개 모두 값이 있습니다.';
+      return;
+    }
+    note.innerHTML = '내려받았습니다 — ' + n0(nRows) + '곳. <b>'
+      + gone.map(function(c){ return esc(c[0]); }).join(' · ')
+      + '</b> 열은 이 조건에서 값이 하나도 없어 파일에서 뺐습니다. '
+      + '연결이 끊긴 것이 아니라 <b>그 정보를 붙이는 단계를 아직 안 돌린 것</b>입니다.'
+      + '<ul class="dlfix">' + gone.filter(function(c){ return c[2]; })
+          .map(function(c){ return '<li>' + esc(c[2]) + '</li>'; }).join('') + '</ul>';
+  }
+
+  // 내려받기 열 정의. 어느 열이 비는지 알아야 하니 한 곳에 모아 둔다.
+  // 붙이는 단계(04 국민연금 · 05 재무 · 06 연락처 · 07 수출명단)를 안 돌리면
+  // 그 열은 전부 빈다. 빈 열을 그대로 내보내면 "연계가 깨졌다"로 읽히므로,
+  // 통째로 빈 열은 빼고 무엇이 왜 빠졌는지 화면에 적는다.
+  var CSVCOL = [
+    ['회사명',       function(f){ return f.n; },  ''],
+    ['업종',         function(f){ return f.se; }, ''],
+    ['품목',         function(f){ return f.pm; }, ''],
+    ['생산품',       function(f){ return f.p; },  ''],
+    ['CBAM',        function(f){ return f.cb; }, ''],
+    ['열공정',       function(f){ return f.h !== '해당없음' ? f.h : ''; }, ''],
+    ['규제',         function(f){ return f.r===1?'할당대상':(f.r===2?'명세서':'규제 밖'); }, ''],
+    ['배출량tCO2eq', function(f){ return f.e || ''; },
+     '배출량 — 규제 대상 법인만 공개됩니다. data\\emission\\ 을 채우고  python src\\03_emission.py'],
+    ['종업원수',     function(f){ return f.emp || ''; },
+     '종업원수 — 국민연금 사업장 자료가 있어야 붙습니다. data\\pension\\ 을 채우고  python src\\04_pension.py'],
+    ['매출액',       function(f){ return f.fs || ''; },
+     '매출액 — DART 공시 법인만 있습니다.  python src\\05_finance.py --key DART키'],
+    ['전화번호',     function(f){ return f.tel || ''; },
+     '전화번호 —  python src\\06_contact.py --key 카카오REST키 --scope target'],
+    ['연락처신뢰도', function(f){ return f.tel ? (TG[f.tg] || '') : ''; }, ''],
+    ['수출명단',     function(f){ return f.ex || ''; },
+     '수출명단 — 명단 파일을 data\\export\\ 에 넣고  python src\\07_export.py'],
+    ['산업단지',     function(f){ return f.c; },  ''],
+    ['단지유형',     function(f){ return f.ct; }, ''],
+    ['시도',         function(f){ return f.s; },  ''],
+    ['시군구',       function(f){ return f.g; },  ''],
+    ['주소',         function(f){ return f.a; },  ''],
+    ['우선순위',     function(f){ return f.sc; }, '']
+  ];
+
   function downloadCsv(){
     var rows = filtered();
-    var head = ['회사명','업종','품목','생산품','CBAM','열공정','규제','배출량tCO2eq',
-                '종업원수','매출액','전화번호','연락처신뢰도','수출명단',
-                '산업단지','단지유형','시도','시군구','주소','우선순위'];
-    var q = function(v){ v = (v==null?'':String(v)); return '"' + v.replace(/"/g,'""') + '"'; };
-    var out = [head.map(q).join(',')];
+    var vals = CSVCOL.map(function(){ return []; });
     rows.forEach(function(f){
-      out.push([f.n, f.se, f.pm, f.p, f.cb, f.h!=='해당없음'?f.h:'',
-                f.r===1?'할당대상':(f.r===2?'명세서':'규제 밖'), f.e||'',
-                f.emp||'', f.fs||'', f.tel||'', TG[f.tg]||'', f.ex||'',
-                f.c, f.ct, f.s, f.g, f.a, f.sc].map(q).join(','));
+      CSVCOL.forEach(function(c, i){
+        var v = c[1](f);
+        vals[i].push(v == null ? '' : String(v));
+      });
     });
-    var blob = new Blob(['\ufeff' + out.join('\r\n')],
+    var keep = [], gone = [];
+    CSVCOL.forEach(function(c, i){
+      var any = false;
+      for(var j = 0; j < vals[i].length; j++){ if(vals[i][j] !== ''){ any = true; break; } }
+      if(any) keep.push(i); else gone.push(c);
+    });
+
+    var q = function(v){ return '"' + v.replace(/"/g,'""') + '"'; };
+    var out = [keep.map(function(i){ return q(CSVCOL[i][0]); }).join(',')];
+    for(var r = 0; r < rows.length; r++){
+      out.push(keep.map(function(i){ return q(vals[i][r]); }).join(','));
+    }
+    showDlNote(rows.length, keep.length, gone);
+
+    var blob = new Blob(['﻿' + out.join('\r\n')],
                         {type:'text/csv;charset=utf-8;'});
     var a = document.createElement('a');
     a.href = URL.createObjectURL(blob);
@@ -2061,6 +2354,15 @@ svg.leaflet-image-layer.leaflet-interactive path {
       ? '점 하나가 공장 한 곳 · ' + n0(_pp) + '곳 표시'
       : '시도 색 = 조건 일치 ' + n0(_rr.length) + '곳 · 점 = 좌표를 확보한 ' + n0(_pp) + '곳';
     controls(); tiles(); map(); bars(); cxTable(); firmTable(); emitPanel();
+    coverStrip(_rr);
+    $('dlnote').hidden = true;
+    // 조건 서랍을 접어두는 좁은 화면에서는, 지금 몇 개가 걸려 있는지 단추에 적어준다
+    var on = 0;
+    ['sec','pm','cxt','heat','cb','reg','size','sido','cx','q'].forEach(function(k){
+      if(st[k]) on++;
+    });
+    if(st.tel) on++; if(st.exp) on++;
+    $('fabn').textContent = on ? on + '개 · ' + n0(_rr.length) : n0(_rr.length) + '곳';
   }
 
   var t=null;

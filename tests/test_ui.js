@@ -22,15 +22,49 @@ async function colText(p, label) {
 }
 
 async function launch() {
-  for (const ch of ['chrome', 'msedge', 'chrome-beta']) {
-    try { return await chromium.launch({ channel: ch }); } catch (e) {}
+  const tried = [];
+
+  // 1) playwright 가 아는 채널 (레지스트리에서 찾는다)
+  for (const ch of ['chrome', 'msedge', 'chrome-beta', 'msedge-beta']) {
+    try { return await chromium.launch({ channel: ch }); }
+    catch (e) { tried.push(`channel ${ch}`); }
   }
-  try { return await chromium.launch(); } catch (e) {
-    console.error('브라우저를 찾지 못했습니다.');
-    console.error('Chrome이나 Edge가 설치돼 있으면 자동으로 잡힙니다.');
-    console.error('둘 다 없으면 이 테스트는 건너뛰고 6_test.py 결과와 눈으로 확인만 하십시오.');
-    process.exit(2);
+
+  // 2) 윈도우에서 실제로 깔리는 자리들을 직접 짚어 본다.
+  //    사용자 계정에만 설치한 Chrome 은 채널 탐색으로 못 찾는 일이 있다.
+  const fs = require('fs');
+  const env = process.env;
+  const cands = [
+    env.PLAYWRIGHT_CHROME,                       // 직접 지정하고 싶을 때
+    env.PROGRAMFILES && env.PROGRAMFILES + '\\Google\\Chrome\\Application\\chrome.exe',
+    env['PROGRAMFILES(X86)'] && env['PROGRAMFILES(X86)'] + '\\Google\\Chrome\\Application\\chrome.exe',
+    env.LOCALAPPDATA && env.LOCALAPPDATA + '\\Google\\Chrome\\Application\\chrome.exe',
+    env.PROGRAMFILES && env.PROGRAMFILES + '\\Microsoft\\Edge\\Application\\msedge.exe',
+    env['PROGRAMFILES(X86)'] && env['PROGRAMFILES(X86)'] + '\\Microsoft\\Edge\\Application\\msedge.exe',
+    '/opt/pw-browsers/chromium',
+    '/usr/bin/google-chrome',
+    '/usr/bin/chromium',
+  ].filter(Boolean);
+  for (const exe of cands) {
+    try {
+      if (!fs.existsSync(exe)) { continue; }
+      const b = await chromium.launch({ executablePath: exe });
+      console.log('  브라우저: ' + exe);
+      return b;
+    } catch (e) { tried.push(exe); }
   }
+
+  // 3) playwright 가 받아둔 chromium
+  try { return await chromium.launch(); } catch (e) { tried.push('playwright chromium'); }
+
+  console.error('브라우저를 찾지 못해 화면 검사를 건너뜁니다. (데이터 검사와는 무관합니다)');
+  console.error('찾아본 곳:');
+  tried.forEach(t => console.error('  ' + t));
+  console.error('');
+  console.error('Chrome 이 있는데도 못 찾으면, 실행 파일 경로를 직접 알려주십시오:');
+  console.error('  $env:PLAYWRIGHT_CHROME="C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"');
+  console.error('  node tests\\test_ui.js');
+  process.exit(2);   // 2 = 못 돌렸음 (1 = 검사 실패). deploy_web.ps1 이 구분합니다.
 }
 
 (async () => {

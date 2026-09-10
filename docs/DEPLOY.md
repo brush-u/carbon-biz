@@ -1,4 +1,27 @@
-# 배포 — GitHub 비공개 저장소 + Cloudflare Pages
+# 배포 — GitHub 비공개 저장소 + Cloudflare
+
+`push` 하면 Cloudflare 가 알아서 배포합니다. 평소에는 `.\deploy_web.ps1` 한 줄입니다.
+
+## 먼저 — Pages 인가 Worker 인가
+
+Cloudflare 가 대시보드를 개편하면서, **Compute → Create** 로 들어가면 Pages 가 아니라
+**정적 자산만 있는 Worker** 로 만들어지는 경우가 많습니다. 둘 다 잘 돌아가지만 **주소가 다릅니다.**
+
+| | 주소 |
+|---|---|
+| Pages | `carbon-biz.pages.dev` |
+| Worker | `carbon-biz.<계정서브도메인>.workers.dev` |
+
+내 것이 어느 쪽인지는 **Compute → Workers & Pages** 목록에서 항목 옆에 붙은 종류로 알 수 있습니다.
+**실제 주소는 프로젝트 → Settings → Domains & Routes** 에 그대로 적혀 있습니다. 그게 정답입니다.
+`workers.dev` 가 **Disabled** 로 되어 있으면 **Enable** 을 눌러야 열립니다.
+
+`wrangler.jsonc` 가 저장소에 있어 Worker 쪽 설정(자산 폴더 `web`)은 이미 잡혀 있습니다.
+`name` 만 대시보드의 실제 프로젝트 이름과 같은지 확인하십시오.
+
+---
+
+# (Pages 로 만드신 경우)
 
 `push` 하면 Cloudflare 가 알아서 배포합니다. 평소에는 명령 한 줄입니다.
 
