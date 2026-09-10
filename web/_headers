@@ -1,0 +1,10 @@
+/data.jgz
+  Content-Type: application/octet-stream
+  Cache-Control: public, max-age=300, must-revalidate
+
+/index.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin

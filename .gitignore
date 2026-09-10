@@ -1,0 +1,32 @@
+# 원본 — 직접 내려받는 것
+data/
+__pycache__/
+node_modules/
+*.pyc
+
+# 산출물 — 다시 만들 수 있는 것
+out/data.json
+out/index.html
+out/page_fragment.html
+out/*.csv
+out/mymaps/
+
+# 인증키
+*.key
+.env
+.vworld_key
+.kakao_key
+.naver_key
+.dart_key
+cache/fin_cache.json
+
+# 무거운데 다시 만들 수 있는 것 — 원본 CSV 만 있으면 1분이면 됩니다
+#   python src\01_prep.py
+cache/clean.pkl
+
+# ── 일부러 남기는 것 ────────────────────────────────────────────────
+# cache/geo_cache.json   지오코딩. 다시 만들려면 며칠 걸립니다
+# cache/boundary.json    시도 경계
+# cache/*.json           배출량·국민연금·연락처·수출 결합 결과
+# cache/vendor/          leaflet + 시도 SVG
+# web/                   배포본
