@@ -1,4 +1,4 @@
-# 전체 재생성 + 검증. 이 파일 하나만 실행하면 됩니다.
+﻿# 전체 재생성 + 검증. 이 파일 하나만 실행하면 됩니다.
 #   .\run_all.ps1
 $ErrorActionPreference = 'Stop'
 Set-Location $PSScriptRoot

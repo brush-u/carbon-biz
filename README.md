@@ -68,8 +68,11 @@ cd D:\workspace\carbon-biz
 .\deploy_web.ps1
 ```
 
-배포처는 **Cloudflare Pages** 입니다 — 무료이고 상업적 이용이 되며, 비공개 저장소도
-연결됩니다. 처음 연결하는 법은 [DEPLOY](docs/DEPLOY.md) 에 있습니다.
+배포처는 **Vercel** 입니다. 처음 연결하는 법은 [DEPLOY](docs/DEPLOY.md) 에 있습니다.
+Cloudflare Pages 설정도 그대로 남겨뒀으니 언제든 되돌릴 수 있습니다.
+
+**Vercel 무료(Hobby) 플랜은 약관상 비상업·개인 용도만 됩니다.** 실제 영업에 돌리시면
+Pro($20/사람·월)로 올리시거나 Cloudflare Pages(무료·상업적 이용 가능)를 쓰십시오.
 
 ## 범위 바꾸기
 

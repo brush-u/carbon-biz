@@ -1,4 +1,4 @@
-# GitHub 비공개 저장소에 처음 올리는 스크립트. 한 번만 실행하면 됩니다.
+﻿# GitHub 비공개 저장소에 처음 올리는 스크립트. 한 번만 실행하면 됩니다.
 #
 #   .\setup_git.ps1 -Repo https://github.com/내계정/carbon-biz.git
 #

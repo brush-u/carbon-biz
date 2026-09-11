@@ -14,8 +14,9 @@
   하루 20,000회까지 호출할 수 있습니다.
 
 실행
-  python 10_finance.py --key 발급받은키
-  python 10_finance.py --key 발급받은키 --year 2024 --limit 50   (먼저 50건만 시험)
+  python src\\05_finance.py --limit 50        먼저 50건만 시험 (.dart_key 파일에서 키를 읽음)
+  python src\\05_finance.py                   전체
+  python src\\05_finance.py --key 발급받은키   키를 직접 넘기려면
 
 산출물
   finance/corpcode.xml   DART 고유번호 목록 (한 번만 받고 재사용)
@@ -133,7 +134,7 @@ def fetch_fin(key, corp_code, year, sleep, dump=False):
 # ── 실행 ───────────────────────────────────────────────────────────────────
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument('--key', required=True, help='OpenDART 인증키 (40자리)')
+    ap.add_argument('--key', default='', help='OpenDART 인증키 (40자리). 없으면 .dart_key 파일에서 읽습니다')
     ap.add_argument('--year', type=int, default=0, help='사업연도 (기본: 작년)')
     ap.add_argument('--limit', type=int, default=0, help='처음 N개 법인만 (0=전체)')
     ap.add_argument('--max', type=int, default=19000,
@@ -143,6 +144,25 @@ def main():
     ap.add_argument('--sleep', type=float, default=0.08)
     ap.add_argument('--verbose-fails', type=int, default=3)
     a = ap.parse_args()
+
+    # 키를 명령창에 매번 치지 않아도 되게, 작업 폴더의 .dart_key 에서도 읽는다.
+    # (.gitignore 에 있어 git 에 올라가지 않습니다)
+    if not a.key:
+        kf = os.path.join(paths.ROOT, '.dart_key')
+        if os.path.exists(kf):
+            for line in open(kf, encoding='utf-8'):
+                line = line.strip()
+                if line and not line.startswith('#'):
+                    a.key = line
+                    break
+    if not a.key:
+        sys.exit('OpenDART 인증키가 없습니다.\n'
+                 '  --key 로 넘기거나, ' + os.path.join(paths.ROOT, '.dart_key')
+                 + ' 파일에 키만 한 줄 적으십시오.\n'
+                 '  발급: https://opendart.fss.or.kr → 인증키 신청 (무료, 이메일 인증, 즉시)')
+    if len(a.key) != 40:
+        print(f'  ! 키가 {len(a.key)}자리입니다. OpenDART 인증키는 40자리입니다. '
+              '앞뒤 공백이나 따옴표가 섞이지 않았는지 보십시오.')
     year = a.year or (pd.Timestamp.today().year - 1)
 
     corps = load_corpcode(a.key)

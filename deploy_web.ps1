@@ -1,4 +1,4 @@
-# 다시 만들고 → 검사하고 → 올린다. 올리면 Cloudflare Pages 가 알아서 배포합니다.
+﻿# 다시 만들고 → 검사하고 → 올린다. 올리면 배포처(Vercel)가 알아서 배포합니다.
 #
 #   .\deploy_web.ps1                 데이터부터 다시 만들어 올림
 #   .\deploy_web.ps1 -SkipBuild      이미 만든 web\ 을 그대로 올림
@@ -64,13 +64,19 @@ if (-not (Test-Path web\index.html) -or -not (Test-Path web\data.jgz)) {
 $mb = [math]::Round((Get-Item web\data.jgz).Length / 1MB, 2)
 Note "web\data.jgz  $mb MB"
 if ($mb -gt 25) {
-  Write-Host '  data.jgz 가 25MiB 를 넘습니다. Cloudflare Pages 가 파일 하나에 두는 한도입니다.' -ForegroundColor Red
+  Write-Host '  data.jgz 가 25MiB 를 넘습니다. (Cloudflare Pages 한도이자, 브라우저가 한 번에 받기에도 큽니다)' -ForegroundColor Red
   Write-Host '  범위를 줄여 다시 만드십시오:' -ForegroundColor Yellow
   Write-Host '    $env:SCOPE=''target''; python src\08_build.py; python src\09_page.py --web' -ForegroundColor Yellow
   exit 1
 }
+# 헤더 설정 — Vercel 은 vercel.json, Cloudflare 는 web\_headers 를 봅니다.
+# 둘 다 두어도 서로 간섭하지 않으니, 배포처를 옮겨도 그대로 씁니다.
+if (-not (Test-Path vercel.json)) {
+  Write-Host '  vercel.json 이 없습니다 (Vercel 배포 설정).' -ForegroundColor Red
+  exit 1
+}
 if (-not (Test-Path web\_headers)) {
-  Write-Host '  web\_headers 가 없습니다 (Cloudflare 헤더 설정).' -ForegroundColor Red
+  Write-Host '  web\_headers 가 없습니다.' -ForegroundColor Red
   Write-Host '    python src\09_page.py --web' -ForegroundColor Yellow
   exit 1
 }
@@ -92,5 +98,7 @@ if (-not $Message) {
 git commit -m $Message | Out-Null
 git push
 
-Write-Host "`n올렸습니다. Cloudflare Pages 가 1~2분 안에 배포합니다." -ForegroundColor Green
-Note 'https://dash.cloudflare.com 의 Compute > 프로젝트 > Deployments 에서 진행 상황을 봅니다.'
+Write-Host "`n올렸습니다. 1~2분 안에 배포됩니다." -ForegroundColor Green
+Note 'Vercel      https://vercel.com/dashboard > 프로젝트 > Deployments'
+Note 'Cloudflare  https://dash.cloudflare.com > Compute > 프로젝트 > Deployments'
+Note '두 곳 다 연결돼 있으면 양쪽에 배포됩니다. 한쪽만 쓰시려면 다른 쪽 프로젝트를 지우십시오.'
